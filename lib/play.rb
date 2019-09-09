@@ -1,3 +1,4 @@
+require "pry"
 # Helper Methods
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -27,6 +28,7 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
+  #binding.pry
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
@@ -38,8 +40,8 @@ end
 # Define your play method below
 def play(board)
   turn = 0
-  while turn < 10
-    turn(board) do
+  while turn < 9
+    turn(board)
       turn += 1
 
   end
